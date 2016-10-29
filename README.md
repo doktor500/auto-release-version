@@ -1,1 +1,1 @@
-#### Function that returns the version of a commit message
+#### Script that returns the version of a commit message
