@@ -10,7 +10,6 @@ describe('index', () => {
     expect(findVersion('Inital commit 0.0.1')).toBe('');
     expect(findVersion('Inital Commit v0.0.1')).toBe('0.0.1');
     expect(findVersion('Commit v1.2.3')).toBe('1.2.3');
-    expect(findVersion('Commit v1.2.33')).toBe('1.2.33');
     expect(findVersion('Commit v111.2222.33333')).toBe('111.2222.33333');
   });
 });
