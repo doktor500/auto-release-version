@@ -24,6 +24,6 @@ const findVersion = (message) => {
 const sanitize = (version) => _.replace(version, 'v', '');
 const getVersion = (message) => sanitize(findVersion(message));
 
-process.stdout.write(getVersion(process.argv[2]));
+process.stdout.write(getVersion(_.last(process.argv)));
 
 module.exports = getVersion;
