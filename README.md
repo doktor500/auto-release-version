@@ -1,1 +1,1 @@
-#### Github hook to enforce a milestone version
+#### Function that returns the version of a commit message

@@ -5,6 +5,7 @@ const findVersion = (message) => {
   const versionNumberRegex = VerbalExpressions()
     .find(
       VerbalExpressions()
+      .then('v')
       .range('0', '9')
       .oneOrMore()
       .then('.')
@@ -18,9 +19,7 @@ const findVersion = (message) => {
   return _.first(versionNumberRegex.exec(message));
 };
 
-exports.handler = (event, context, callback) => {
-  const version = findVersion(event.message);
-  _.isUndefined(version) ? context.fail("Invalid version") : context.succeed(version);
-};
+const sanitize = (version) => _.replace(version, 'v', '');
+const getVersion = (message) => sanitize(findVersion(message));
 
-// module.exports = findVersion;
+module.exports = getVersion;
